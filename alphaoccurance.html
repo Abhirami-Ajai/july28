@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            text-align: center;
+            background-color: #B2BABB;
+        }
+
+        h1 {
+            color: #D68910;
+        }
+
+        h3 {
+            color: #2980B9;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>73.Js program to find out the number of occurrence of all alphabets in that string. Find out the alphabet with maximum occurrence?</h1>
+    <center>
+        <table>
+            <tr>
+                <td>
+                    <h3>Enter the String</h3>
+                </td>
+                <td>:</td>
+                <td><input type="text" id="inputString"></td>
+            </tr>
+            <tr>
+                <th style="text-align: center">
+                    <button type="button" onClick="alphaOccur()">Find Occurrences</button>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <h3>Count</h3>
+                </td>
+                <td>:</td>
+                <td><input type="text" id="result"></td>
+            </tr>
+	    <tr>
+                <td>
+                    <h3>Maximum occurrance</h3>
+                </td>
+                <td>:</td>
+                <td><input type="text" id="result1"></td>
+            </tr>
+        </table>
+    </center>
+    <script>
+        function alphaOccur() {
+            var inputString = document.getElementById("inputString").value;
+            var result = {};
+            inputString = inputString.replace(/[^a-zA-Z]/g, '').toLowerCase();
+            for (var i = 0; i < inputString.length; i++) {
+                var char = inputString.charAt(i);
+                if (result[char]) {
+                    result[char]++;
+                } else {
+                    result[char] = 1;
+                }
+            }
+            var maxOccurrence = 0;
+            var maxAlphabet = '';
+            for (var alphabet in result) {
+                if (result[alphabet] > maxOccurrence) {
+                    maxOccurrence = result[alphabet];
+                    maxAlphabet = alphabet;
+                }
+            }
+
+            document.getElementById("result").value = JSON.stringify(result);
+	    
+            document.getElementById("result1").value=( maxAlphabet + " =" + maxOccurrence);
+        }
+    </script>
+</body>
+
+</html>

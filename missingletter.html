@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            text-align: center;
+            background-color: #B2BABB;
+        }
+
+        h1 {
+            color: #D68910;
+        }
+
+        h3 {
+            color: #2980B9;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>71.Js program to identify the missing letter in a given string (list of alphabets). The method returns, "There is no missing letter!" if no letters are missing from the string?</h1>
+    <center>
+        <table>
+            <tr>
+                <td>
+                    <h3>Enter the String</h3>
+                </td>
+                <td>:</td>
+                <td><input type="text" id="inputString"></td>
+            </tr>
+            <tr>
+                <th style="text-align: center">
+                    <button type="button" onClick="missingLetter()">Find Occurrences</button>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <h3>Count</h3>
+                </td>
+                <td>:</td>
+                <td><input type="text" id="result"></td>
+            </tr>
+        </table>
+    </center>
+    <script>
+        function missingLetter() {
+    var inputString = document.getElementById("inputString").value.toLowerCase();
+    var result = "";
+
+    for (var i = 0; i < inputString.length - 1; i++) {
+        if (inputString.charCodeAt(i + 1) - inputString.charCodeAt(i) > 1) {
+            result += String.fromCharCode(inputString.charCodeAt(i) + 1);
+        }
+    }
+
+    document.getElementById("result").value = result || "There is no missing letter!";
+}
+
+    </script>
+</body>
+
+</html>

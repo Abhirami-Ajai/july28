@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            text-align: center;
+            background-color: #B2BABB;
+        }
+
+        h1 {
+            color: #D68910;
+        }
+
+        h3 {
+            color: #2980B9;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>72.Js program to delete all consonants from the string "Hello, have a good day".</h1>
+    <center>
+        <table>
+            <tr>
+                <td>
+                    <h3>Enter the String</h3>
+                </td>
+                <td>:</td>
+                <td><input type="text" id="inputString"></td>
+            </tr>
+            <tr>
+                <th style="text-align: center">
+                    <button type="button" onClick="deleteConsonants()">Delete Consonants</button>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <h3>Result</h3>
+                </td>
+                <td>:</td>
+                <td><input type="text" id="result"></td>
+            </tr>
+        </table>
+    </center>
+    <script>
+        function deleteConsonants() {
+            var inputString = document.getElementById("inputString").value;
+            var result = inputString.replace(/[^aeiouAEIOU\s.,!?;:'"`]/g, '');
+
+            document.getElementById("result").value = result;
+        }
+    </script>
+</body>
+
+</html>

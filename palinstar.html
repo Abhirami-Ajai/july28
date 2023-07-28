@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            text-align: center;
+            background-color: #B2BABB;
+        }
+
+        h1 {
+            color: #D68910;
+        }
+
+        h3 {
+            color: #2980B9;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>74.Input a string which contains some palindrome substrings. Js program to find out the position of palindrome substrings if exist and replace it by . (For example if input string is “bob has a radar plane” then it should convert in “** has a ***** plane”?</h1>
+    <center>
+        <table>
+            <tr>
+                <td>
+                    <h3>Enter the String</h3>
+                </td>
+                <td>:</td>
+                <td><input type="text" id="inputString"></td>
+            </tr>
+            <tr>
+                <th style="text-align: center">
+                    <button type="button" onClick="replacePalindromes()">Check</button>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <h3>Result</h3>
+                </td>
+                <td>:</td>
+                <td><input type="text" id="result1"></td>
+            </tr>
+        </table>
+    </center>
+    <script>
+        function isPalindrome(str) {
+            return str === str.split('').reverse().join('');
+        }
+
+        function replacePalindromes() {
+            var inputString = document.getElementById("inputString").value;
+            var words = inputString.split(' ');
+            var result = "";
+
+            for (var i = 0; i < words.length; i++) {
+                var word = words[i];
+
+                if (isPalindrome(word)) {
+                    result += '*'.repeat(word.length) + ' ';
+                } else {
+                    result += word + ' ';
+                }
+            }
+
+            document.getElementById("result1").value = result.trim();
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            text-align: center;
+            background-color: #B2BABB;
+        }
+
+        h1 {
+            color: #D68910;
+        }
+
+        h3 {
+            color: #2980B9;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>70.Js program to change every letter in a given string with the letter following it in the alphabet (ie. a becomes b, p becomes q, z becomes a)?</h1>
+    <center>
+        <table>
+            <tr>
+                <td>
+                    <h3>Enter the String</h3>
+                </td>
+                <td>:</td>
+                <td><input type="text" id="inputString"></td>
+            </tr>
+            <tr>
+                <th style="text-align: center">
+                    <button type="button" onClick="replace()">Find Occurrences</button>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <h3>Count</h3>
+                </td>
+                <td>:</td>
+                <td><input type="text" id="result"></td>
+            </tr>
+        </table>
+    </center>
+    <script>
+        function replace() {
+         var str = document.getElementById("inputString").value;
+         var str1 = "";
+         var str2 = "";
+
+         for (var i = 0; i < str.length; i++){
+           if (str.charAt(i) === " ") {
+               str1 = str1.concat(" ");
+           }
+           else if (str.charAt(i) === "z") {
+              str1 = str1.concat("a");
+           }
+           else {
+             str1 = str1.concat(String.fromCharCode(str.charAt(i).charCodeAt(0) + 1));
+           }
+         }
+
+         for (var i = 0; i < str1.length; i++){ 
+            switch (str1.charAt(i)){
+             case "a":
+             case "e":
+             case "i":
+             case "o":
+             case "u":
+                str2 = str2 + str1.charAt(i).toUpperCase();
+                break;
+            default:
+                str2 = str2 + str1.charAt(i);
+                break; 
+           }
+        }
+
+        document.getElementById("result").value = str2;
+      }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            text-align: center;
+            background-color: #B2BABB;
+        }
+
+        h1 {
+            color: #D68910;
+        }
+
+        h3 {
+            color: #2980B9;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>69.Js program to find the largest and smallest word in a string?</h1>
+    <center>
+        <table>
+            <tr>
+                <td>
+                    <h3>Enter the String</h3>
+                </td>
+                <td>:</td>
+                <td><input type="text" id="inputString"></td>
+            </tr>
+            <tr>
+                <th style="text-align: center">
+                    <button type="button" onClick="largeandsmall()">Find</button>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <h3>Large</h3>
+                </td>
+                <td>:</td>
+                <td><input type="text" id="result1"></td>
+            </tr>
+	   <tr>
+                <td>
+                    <h3>Small</h3>
+                </td>
+                <td>:</td>
+                <td><input type="text" id="result2"></td>
+            </tr>
+        </table>
+    </center>
+    <script>
+        function largeandsmall() {
+        var str = document.getElementById("inputString").value;
+        const strArr = str.split(" ");
+        let min = strArr[0];
+        let max = strArr[0];
+        for(let i = 1; i < strArr.length; i++){
+          if(strArr[i].length < min.length){
+             min = strArr[i];
+          };
+          if(strArr[i].length > max.length){
+            max = strArr[i];
+          };
+        }
+        document.getElementById("result1").value = max;
+        document.getElementById("result2").value = min;
+}
+
+    </script>
+</body>
+
+</html>
